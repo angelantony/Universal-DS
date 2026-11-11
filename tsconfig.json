@@ -1,0 +1,34 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/tokens"
+    },
+    {
+      "path": "./packages/code-generator"
+    },
+    {
+      "path": "./packages/components"
+    },
+    {
+      "path": "./packages/metadata"
+    },
+    {
+      "path": "./packages/testing"
+    },
+    {
+      "path": "./packages/themes"
+    },
+    {
+      "path": "./packages/icons"
+    },
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/cli"
+    }
+  ]
+}

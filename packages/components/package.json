@@ -1,0 +1,26 @@
+{
+  "name": "@uds/components",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Lit Web Components of Universal DS and their public contract metadata.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "@uds/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "nx": {
+    "tags": [
+      "type:runtime",
+      "framework:none"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@uds/metadata",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Component Metadata Registry schema, validation and registry API of Universal DS.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "@uds/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "nx": {
+    "tags": [
+      "type:foundation",
+      "framework:none"
+    ]
+  }
+}

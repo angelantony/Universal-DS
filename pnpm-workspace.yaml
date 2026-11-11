@@ -1,0 +1,38 @@
+packages:
+  - apps/*
+  - apps/demos/*
+  - packages/*
+  - tools/*
+catalog:
+  '@axe-core/playwright': 4.14.0
+  '@playwright/test': 1.65.0
+  '@vitest/browser-playwright': 5.1.0
+  axe-core: 4.14.0
+  playwright: 1.65.0
+  vitest: 5.1.0
+  typescript: 6.0.3
+  tslib: 2.9.1
+  '@types/node': 24.19.2
+
+allowBuilds:
+  nx: true
+minimumReleaseAgeExclude:
+  - '@nx/devkit@24.0.6'
+  - '@nx/eslint-plugin@24.0.6'
+  - '@nx/eslint@24.0.6'
+  - '@nx/js@24.0.6'
+  - '@nx/nx-darwin-arm64@24.0.6'
+  - '@nx/nx-darwin-x64@24.0.6'
+  - '@nx/nx-freebsd-x64@24.0.6'
+  - '@nx/nx-linux-arm-gnueabihf@24.0.6'
+  - '@nx/nx-linux-arm64-gnu@24.0.6'
+  - '@nx/nx-linux-arm64-musl@24.0.6'
+  - '@nx/nx-linux-x64-gnu@24.0.6'
+  - '@nx/nx-linux-x64-musl@24.0.6'
+  - '@nx/nx-win32-arm64-msvc@24.0.6'
+  - '@nx/nx-win32-x64-msvc@24.0.6'
+  - '@nx/playwright@24.0.6'
+  - '@nx/vitest@24.0.6'
+  - '@nx/workspace@24.0.6'
+  - nx@24.0.6
+  - vite@8.3.8

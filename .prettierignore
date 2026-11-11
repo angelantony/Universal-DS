@@ -1,0 +1,9 @@
+node_modules
+dist
+out-tsc
+coverage
+test-results
+playwright-report
+.nx
+pnpm-lock.yaml
+CHANGELOG.md

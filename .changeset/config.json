@@ -1,0 +1,16 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@4.0.1/schema.json",
+  "baseBranch": "main",
+  "access": "restricted",
+  "format": "prettier",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "ignore": ["@uds/testing"],
+  "fixed": [
+    ["@uds/tokens", "@uds/themes", "@uds/core", "@uds/icons", "@uds/metadata", "@uds/components"]
+  ],
+  "linked": [],
+  "updateInternalDependencies": "patch",
+  "privatePackages": { "version": true, "tag": false },
+  "changedFilePatterns": ["src/**", "package.json"]
+}

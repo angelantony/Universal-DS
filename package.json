@@ -1,0 +1,51 @@
+{
+  "name": "@uds/source",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Universal DS — enterprise design system monorepo",
+  "license": "UNLICENSED",
+  "type": "module",
+  "packageManager": "pnpm@12.19.0",
+  "engines": {
+    "node": "^24.11.0"
+  },
+  "scripts": {
+    "build": "nx run-many -t build",
+    "typecheck": "nx run-many -t typecheck",
+    "lint": "nx run-many -t lint",
+    "test": "nx run-many -t test",
+    "e2e": "nx run-many -t e2e",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm format:check && nx run-many -t lint typecheck test build e2e",
+    "changeset": "changeset",
+    "graph": "nx graph"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "catalog:",
+    "@changesets/cli": "3.0.3",
+    "@eslint/js": "10.0.1",
+    "@nx/eslint": "24.0.6",
+    "@nx/eslint-plugin": "24.0.6",
+    "@nx/js": "24.0.6",
+    "@nx/playwright": "24.0.6",
+    "@nx/vitest": "24.0.6",
+    "@playwright/test": "catalog:",
+    "@types/node": "catalog:",
+    "@typescript-eslint/parser": "8.72.2",
+    "@vitest/browser-playwright": "catalog:",
+    "axe-core": "catalog:",
+    "eslint": "10.14.0",
+    "eslint-config-prettier": "10.1.8",
+    "globals": "17.14.0",
+    "jsonc-eslint-parser": "3.3.0",
+    "nx": "24.0.6",
+    "playwright": "catalog:",
+    "prettier": "3.9.10",
+    "tslib": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "8.72.2",
+    "vite": "8.3.8",
+    "vitest": "catalog:"
+  }
+}
