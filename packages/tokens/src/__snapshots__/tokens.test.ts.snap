@@ -1,0 +1,207 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`design tokens > builds layered CSS, resolved JSON and token names 1`] = `
+"@layer uds.tokens, uds.theme, uds.brand;
+
+@layer uds.tokens {
+  :root {
+    --uds-tokens-version: 0.0.0;
+    --uds-color-white: #ffffff;
+    --uds-color-black: #000000;
+    --uds-color-neutral-50: #f8fafc;
+    --uds-color-neutral-100: #f1f5f9;
+    --uds-color-neutral-200: #e2e8f0;
+    --uds-color-neutral-300: #cbd5e1;
+    --uds-color-neutral-400: #94a3b8;
+    --uds-color-neutral-500: #64748b;
+    --uds-color-neutral-600: #475569;
+    --uds-color-neutral-700: #334155;
+    --uds-color-neutral-800: #1e293b;
+    --uds-color-neutral-900: #0f172a;
+    --uds-color-neutral-950: #020617;
+    --uds-color-blue-300: #93c5fd;
+    --uds-color-blue-700: #1d4ed8;
+    --uds-color-blue-800: #1e40af;
+    --uds-color-teal-700: #0f766e;
+    --uds-color-teal-800: #115e59;
+    --uds-color-green-300: #86efac;
+    --uds-color-green-800: #166534;
+    --uds-color-green-hc: #00ff00;
+    --uds-color-red-300: #fca5a5;
+    --uds-color-red-800: #991b1b;
+    --uds-color-red-hc: #ff0000;
+    --uds-color-amber-300: #fcd34d;
+    --uds-color-amber-900: #78350f;
+    --uds-color-cyan-800: #155e75;
+    --uds-color-cyan-hc: #00ffff;
+    --uds-color-yellow-hc: #ffff00;
+    --uds-layout-breakpoint-sm: 30rem; /** 480px */
+    --uds-layout-breakpoint-md: 48rem; /** 768px */
+    --uds-layout-breakpoint-lg: 64rem; /** 1024px */
+    --uds-layout-breakpoint-xl: 90rem; /** 1440px */
+    --uds-layout-breakpoint-2xl: 120rem; /** 1920px */
+    --uds-layout-container-sm: 40rem;
+    --uds-layout-container-md: 48rem;
+    --uds-layout-container-lg: 64rem;
+    --uds-layout-container-xl: 80rem;
+    --uds-layout-z-base: 0;
+    --uds-layout-z-dropdown: 10;
+    --uds-layout-z-sticky: 20;
+    --uds-layout-z-overlay: 30;
+    --uds-layout-z-modal: 40;
+    --uds-layout-z-toast: 50;
+    --uds-layout-grid-columns: 12;
+    --uds-motion-duration-instant: 0s;
+    --uds-motion-duration-fast: 0.12s;
+    --uds-motion-duration-normal: 0.2s;
+    --uds-motion-duration-slow: 0.32s;
+    --uds-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --uds-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+    --uds-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+    --uds-motion-transition-fade: var(--uds-motion-duration-normal) var(--uds-motion-easing-standard); /** References duration and easing custom properties so reduced motion can zero the duration. */
+    --uds-motion-animation-fade: uds-fade var(--uds-motion-duration-normal) var(--uds-motion-easing-standard); /** Preset name plus duration and easing. Keyframes are owned by the component that uses the preset. */
+    --uds-radius-none: 0rem;
+    --uds-radius-sm: 0.25rem;
+    --uds-radius-md: 0.5rem;
+    --uds-radius-lg: 0.75rem;
+    --uds-radius-full: 9999px;
+    --uds-border-width-none: 0px;
+    --uds-border-width-thin: 1px;
+    --uds-border-width-thick: 2px;
+    --uds-shadow-none: none;
+    --uds-shadow-sm: 0px 1px 2px 0px #0f172a1a;
+    --uds-shadow-md: 0px 8px 24px 0px #0f172a26;
+    --uds-elevation-flat: 0;
+    --uds-elevation-raised: 1;
+    --uds-elevation-overlay: 2;
+    --uds-space-0: 0rem;
+    --uds-space-1: 0.25rem;
+    --uds-space-2: 0.5rem;
+    --uds-space-3: 0.75rem;
+    --uds-space-4: 1rem;
+    --uds-space-5: 1.25rem;
+    --uds-space-6: 1.5rem;
+    --uds-space-8: 2rem;
+    --uds-space-10: 2.5rem;
+    --uds-space-12: 3rem;
+    --uds-space-16: 4rem;
+    --uds-font-family-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+    --uds-font-family-serif: Georgia, serif;
+    --uds-font-family-mono: ui-monospace, Menlo, monospace;
+    --uds-font-size-xs: 0.75rem;
+    --uds-font-size-sm: 0.875rem;
+    --uds-font-size-md: 1rem;
+    --uds-font-size-lg: 1.125rem;
+    --uds-font-size-xl: 1.25rem;
+    --uds-font-size-2xl: 1.5rem;
+    --uds-font-weight-regular: 400;
+    --uds-font-weight-medium: 500;
+    --uds-font-weight-semibold: 600;
+    --uds-font-weight-bold: 700;
+    --uds-font-line-height-tight: 1.25;
+    --uds-font-line-height-md: 1.5;
+    --uds-font-line-height-loose: 1.75;
+    --uds-font-letter-spacing-tight: -0.01em;
+    --uds-font-letter-spacing-normal: 0em;
+    --uds-font-letter-spacing-wide: 0.04em;
+    --uds-font-transform-none: none;
+    --uds-font-transform-uppercase: uppercase;
+    --uds-icon-size: 1.25rem;
+    --uds-button-size-xs-min-block: 1.5rem;
+    --uds-button-size-xs-icon: 1rem;
+    --uds-button-size-sm-min-block: 2rem;
+    --uds-button-size-sm-icon: 1rem;
+    --uds-button-size-md-min-block: 2.5rem;
+    --uds-button-size-lg-min-block: 3rem;
+    --uds-button-size-lg-icon: 1.5rem;
+    --uds-button-size-xl-min-block: 3.5rem;
+    --uds-button-size-xl-icon: 1.5rem;
+    --uds-color-background-canvas: var(--uds-color-neutral-50);
+    --uds-color-background-surface: var(--uds-color-white);
+    --uds-color-text-default: var(--uds-color-neutral-900);
+    --uds-color-text-muted: var(--uds-color-neutral-700);
+    --uds-color-text-inverse: var(--uds-color-white);
+    --uds-color-border-default: var(--uds-color-neutral-300);
+    --uds-color-border-strong: var(--uds-color-neutral-700);
+    --uds-color-focus-ring: var(--uds-color-blue-700);
+    --uds-color-action-primary-background: var(--uds-color-blue-700);
+    --uds-color-action-primary-text: var(--uds-color-white);
+    --uds-color-action-secondary-background: var(--uds-color-white);
+    --uds-color-action-secondary-text: var(--uds-color-neutral-900);
+    --uds-color-action-secondary-border: var(--uds-color-neutral-700);
+    --uds-color-success-background: var(--uds-color-green-800);
+    --uds-color-success-text: var(--uds-color-white);
+    --uds-color-success-on-canvas: var(--uds-color-green-800);
+    --uds-color-warning-background: var(--uds-color-amber-900);
+    --uds-color-warning-text: var(--uds-color-white);
+    --uds-color-warning-on-canvas: var(--uds-color-amber-900);
+    --uds-color-danger-background: var(--uds-color-red-800);
+    --uds-color-danger-text: var(--uds-color-white);
+    --uds-color-danger-on-canvas: var(--uds-color-red-800);
+    --uds-color-info-background: var(--uds-color-cyan-800);
+    --uds-color-info-text: var(--uds-color-white);
+    --uds-layout-grid-gutter: var(--uds-space-4);
+    --uds-radius-control: var(--uds-radius-md);
+    --uds-radius-surface: var(--uds-radius-lg);
+    --uds-border-width-default: var(--uds-border-width-thin);
+    --uds-border-width-strong: var(--uds-border-width-thick);
+    --uds-shadow-surface: var(--uds-shadow-sm);
+    --uds-elevation-surface: var(--uds-elevation-raised);
+    --uds-space-component-padding: var(--uds-space-4);
+    --uds-space-component-gap: var(--uds-space-2);
+    --uds-space-layout-gap: var(--uds-space-6);
+    --uds-space-layout-page: var(--uds-space-8);
+    --uds-font-family-body: var(--uds-font-family-sans);
+    --uds-font-family-heading: var(--uds-font-family-sans);
+    --uds-font-family-code: var(--uds-font-family-mono);
+    --uds-font-size-body: var(--uds-font-size-md);
+    --uds-font-size-label: var(--uds-font-size-sm);
+    --uds-font-weight-body: var(--uds-font-weight-regular);
+    --uds-font-weight-label: var(--uds-font-weight-medium);
+    --uds-font-line-height-body: var(--uds-font-line-height-md);
+    --uds-font-letter-spacing-body: var(--uds-font-letter-spacing-normal);
+    --uds-font-transform-label: var(--uds-font-transform-none);
+    --uds-focus-offset: var(--uds-space-1);
+    --uds-button-padding-block: var(--uds-space-2);
+    --uds-button-shadow: var(--uds-shadow-none);
+    --uds-button-transition-duration: var(--uds-motion-duration-fast);
+    --uds-button-spinner-duration: var(--uds-motion-duration-slow);
+    --uds-button-size-xs-padding-inline: var(--uds-space-2);
+    --uds-button-size-xs-padding-block: var(--uds-space-1);
+    --uds-button-size-xs-font-size: var(--uds-font-size-xs);
+    --uds-button-size-sm-padding-inline: var(--uds-space-3);
+    --uds-button-size-sm-padding-block: var(--uds-space-1);
+    --uds-button-size-sm-font-size: var(--uds-font-size-sm);
+    --uds-button-size-md-padding-inline: var(--uds-space-4);
+    --uds-button-size-md-padding-block: var(--uds-space-2);
+    --uds-button-size-md-font-size: var(--uds-font-size-sm);
+    --uds-button-size-md-icon: var(--uds-icon-size);
+    --uds-button-size-lg-padding-inline: var(--uds-space-5);
+    --uds-button-size-lg-padding-block: var(--uds-space-3);
+    --uds-button-size-lg-font-size: var(--uds-font-size-md);
+    --uds-button-size-xl-padding-inline: var(--uds-space-6);
+    --uds-button-size-xl-padding-block: var(--uds-space-3);
+    --uds-button-size-xl-font-size: var(--uds-font-size-lg);
+    --uds-button-background: var(--uds-color-action-primary-background);
+    --uds-button-color: var(--uds-color-action-primary-text);
+    --uds-button-radius: var(--uds-radius-control);
+    --uds-button-padding-inline: var(--uds-space-component-padding);
+    --uds-button-font-size: var(--uds-font-size-label);
+    --uds-button-font-weight: var(--uds-font-weight-label);
+    --uds-button-border-width: var(--uds-border-width-default);
+    --uds-button-gap: var(--uds-space-component-gap);
+    --uds-button-focus-ring: var(--uds-color-focus-ring);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --uds-motion-duration-instant: 0s;
+      --uds-motion-duration-fast: 0s;
+      --uds-motion-duration-normal: 0s;
+      --uds-motion-duration-slow: 0s;
+      --uds-button-transition-duration: 0s;
+      --uds-button-spinner-duration: 0s;
+    }
+  }
+}
+"
+`;

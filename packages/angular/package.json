@@ -1,0 +1,62 @@
+{
+  "name": "@uds/angular",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generated Angular 22 bindings for Universal DS custom elements.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": true,
+  "exports": {
+    ".": {
+      "types": "./dist/types/uds-angular.d.ts",
+      "default": "./dist/fesm2022/uds-angular.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "nx": {
+    "tags": [
+      "type:adapter",
+      "framework:angular"
+    ],
+    "targets": {
+      "build": {
+        "command": "ng-packagr -p ng-package.json",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "{projectRoot}/dist"
+        ],
+        "cache": true
+      },
+      "typecheck": {
+        "command": "tsc -p tsconfig.lib.json --noEmit --pretty false",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "^build"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "@uds/components": "workspace:*",
+    "tslib": "catalog:"
+  },
+  "peerDependencies": {
+    "@angular/core": "^22.0.0"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "catalog:",
+    "@angular/core": "catalog:",
+    "ng-packagr": "catalog:",
+    "rxjs": "catalog:"
+  }
+}

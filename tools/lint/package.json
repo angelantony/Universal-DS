@@ -1,0 +1,17 @@
+{
+  "name": "@uds/stylelint-plugin",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "postcss-lit": "catalog:",
+    "stylelint": "catalog:",
+    "vitest": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "type:tooling",
+      "framework:none"
+    ]
+  }
+}

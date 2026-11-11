@@ -7,5 +7,25 @@
     "types": []
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.test.ts"]
+  "exclude": ["src/**/*.test.ts", "src/css-modules.d.ts"],
+  "references": [
+    {
+      "path": "../metadata/tsconfig.lib.json"
+    },
+    {
+      "path": "../icons/tsconfig.lib.json"
+    },
+    {
+      "path": "../core/tsconfig.lib.json"
+    },
+    {
+      "path": "../../tools/contract-check/tsconfig.lib.json"
+    },
+    {
+      "path": "../tokens/tsconfig.lib.json"
+    },
+    {
+      "path": "../themes/tsconfig.lib.json"
+    }
+  ]
 }

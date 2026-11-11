@@ -17,3 +17,6 @@ blob-report/
 .env
 .env.*
 !.env.example
+
+# Vitest browser-mode attachments (screenshots of failures, generated)
+.vitest/

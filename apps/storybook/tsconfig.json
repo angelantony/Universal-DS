@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["stories/**/*.ts", ".storybook/**/*.ts"],
+  "references": [
+    {
+      "path": "../../packages/icons"
+    },
+    {
+      "path": "../../packages/core"
+    },
+    {
+      "path": "../../packages/components"
+    },
+    {
+      "path": "../../packages/themes"
+    },
+    {
+      "path": "../../packages/tokens"
+    }
+  ]
+}

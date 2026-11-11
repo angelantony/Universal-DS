@@ -21,6 +21,10 @@ const depConstraints = [
   { sourceTag: 'type:adapter', onlyDependOnLibsWithTags: ['type:runtime', 'type:foundation'] },
   { sourceTag: 'type:tooling', onlyDependOnLibsWithTags: ['type:tooling', 'type:foundation'] },
   {
+    sourceTag: 'type:generator',
+    onlyDependOnLibsWithTags: ['type:tooling', 'type:foundation', 'type:runtime'],
+  },
+  {
     sourceTag: 'type:app',
     onlyDependOnLibsWithTags: ['type:foundation', 'type:runtime', 'type:adapter', 'type:tooling'],
   },
@@ -30,6 +34,15 @@ const depConstraints = [
     onlyDependOnLibsWithTags: ['framework:none'],
     bannedExternalImports: frameworkImports,
   },
+  {
+    sourceTag: 'framework:react',
+    onlyDependOnLibsWithTags: ['framework:react', 'framework:none'],
+  },
+  {
+    sourceTag: 'framework:angular',
+    onlyDependOnLibsWithTags: ['framework:angular', 'framework:none'],
+  },
+  { sourceTag: 'framework:vue', onlyDependOnLibsWithTags: ['framework:vue', 'framework:none'] },
 ];
 
 const testFiles = ['**/*.test.ts', '**/*.e2e.ts', '**/e2e/**/*.ts'];
@@ -71,7 +84,7 @@ export default defineConfig(
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts', '**/*.tsx'],
     extends: [tseslint.configs.strictTypeChecked, tseslint.configs.stylisticTypeChecked],
     languageOptions: {
       parserOptions: {
@@ -84,7 +97,7 @@ export default defineConfig(
     },
   },
   {
-    files: ['**/*.ts', '**/*.js'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.js'],
     rules: {
       '@nx/enforce-module-boundaries': [
         'error',
@@ -127,6 +140,7 @@ export default defineConfig(
             '{projectRoot}/vitest.config.{js,ts,mjs,mts}',
             '{projectRoot}/playwright.config.{js,ts,mjs,mts}',
             '{projectRoot}/**/*.test.ts',
+            '{projectRoot}/scripts/**',
             '{projectRoot}/e2e/**/*',
           ],
         },

@@ -85,28 +85,33 @@ Dipendenze esterne principali:
 
 ## 2. Tag Nx
 
-| Tag                                                       | Applicato a                                      |
-| --------------------------------------------------------- | ------------------------------------------------ |
-| `type:foundation`                                         | tokens, themes, metadata                         |
-| `type:runtime`                                            | core, icons, components                          |
-| `type:adapter`                                            | react, angular, vue                              |
-| `type:tooling`                                            | code-generator, theme-tools, builder-engine, cli |
-| `type:app`                                                | portal, storybook, demos                         |
-| `type:test-util`                                          | testing                                          |
-| `framework:none`                                          | tutto tranne adapter e app                       |
-| `framework:react` / `framework:angular` / `framework:vue` | adapter e demo corrispondenti, portal (react)    |
+| Tag                                                       | Applicato a                                                   |
+| --------------------------------------------------------- | ------------------------------------------------------------- |
+| `type:foundation`                                         | tokens, themes, metadata                                      |
+| `type:runtime`                                            | core, icons, components                                       |
+| `type:adapter`                                            | react, angular, vue                                           |
+| `type:tooling`                                            | code-generator, theme-tools, builder-engine, cli, demo-verify |
+| `type:generator`                                          | generators (legge `@uds/components/metadata`)                 |
+| `type:app`                                                | portal, storybook, demos                                      |
+| `type:test-util`                                          | testing                                                       |
+| `framework:none`                                          | tutto tranne adapter e app                                    |
+| `framework:react` / `framework:angular` / `framework:vue` | adapter e demo corrispondenti, portal (react)                 |
 
 ## 3. Regole (`@nx/enforce-module-boundaries`)
 
-| Sorgente          | Può dipendere da                                                                             |
-| ----------------- | -------------------------------------------------------------------------------------------- |
-| `type:foundation` | `type:foundation`                                                                            |
-| `type:runtime`    | `type:runtime`, `type:foundation`                                                            |
-| `type:adapter`    | `type:runtime`, `type:foundation`                                                            |
-| `type:tooling`    | `type:tooling`, `type:foundation` (+ eccezione: `cli` legge i dati di `components/metadata`) |
-| `type:app`        | tutto tranne `type:test-util` in codice di produzione                                        |
-| `framework:none`  | solo `framework:none`                                                                        |
-| `type:test-util`  | `type:foundation`, `type:runtime`                                                            |
+| Sorgente            | Può dipendere da                                                                             |
+| ------------------- | -------------------------------------------------------------------------------------------- |
+| `type:foundation`   | `type:foundation`                                                                            |
+| `type:runtime`      | `type:runtime`, `type:foundation`                                                            |
+| `type:adapter`      | `type:runtime`, `type:foundation`                                                            |
+| `type:tooling`      | `type:tooling`, `type:foundation` (+ eccezione: `cli` legge i dati di `components/metadata`) |
+| `type:generator`    | `type:tooling`, `type:foundation`, `type:runtime` (solo i metadata dei componenti)           |
+| `type:app`          | tutto tranne `type:test-util` in codice di produzione                                        |
+| `framework:none`    | solo `framework:none`                                                                        |
+| `framework:react`   | `framework:react`, `framework:none`                                                          |
+| `framework:angular` | `framework:angular`, `framework:none`                                                        |
+| `framework:vue`     | `framework:vue`, `framework:none`                                                            |
+| `type:test-util`    | `type:foundation`, `type:runtime`                                                            |
 
 Altri controlli bloccanti in CI:
 

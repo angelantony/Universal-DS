@@ -1,0 +1,35 @@
+{
+  "name": "@uds/vue",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generated Vue 3 bindings for Universal DS custom elements.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": true,
+  "exports": {
+    ".": {
+      "@uds/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "nx": {
+    "tags": [
+      "type:adapter",
+      "framework:vue"
+    ]
+  },
+  "dependencies": {
+    "@uds/components": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "vue": "catalog:"
+  }
+}

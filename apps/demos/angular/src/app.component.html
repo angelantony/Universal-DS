@@ -1,0 +1,10 @@
+<uds-button id="label-button" variant="outline" tone="danger" (click)="onSave()">Save</uds-button>
+<p id="count">{{ count() }}</p>
+<form id="demo-form" (submit)="onSubmit($event)">
+  <input id="title" name="title" />
+  <uds-button id="submit-button" type="submit">Submit</uds-button>
+  <uds-button id="reset-button" type="reset">Reset</uds-button>
+</form>
+<p id="submitted">{{ submitted() }}</p>
+<uds-button id="disabled" [disabled]="true" (click)="onDisabled()">Disabled</uds-button>
+<p id="disabled-count">{{ disabledCount() }}</p>

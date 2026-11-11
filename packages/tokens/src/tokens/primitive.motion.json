@@ -1,0 +1,29 @@
+{
+  "motion": {
+    "duration": {
+      "instant": { "$type": "duration", "$value": "0ms" },
+      "fast": { "$type": "duration", "$value": "120ms" },
+      "normal": { "$type": "duration", "$value": "200ms" },
+      "slow": { "$type": "duration", "$value": "320ms" }
+    },
+    "easing": {
+      "standard": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1] },
+      "emphasized": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1.2] },
+      "exit": { "$type": "cubicBezier", "$value": [0.4, 0, 1, 1] }
+    },
+    "transition": {
+      "fade": {
+        "$type": "string",
+        "$description": "References duration and easing custom properties so reduced motion can zero the duration.",
+        "$value": "var(--uds-motion-duration-normal) var(--uds-motion-easing-standard)"
+      }
+    },
+    "animation": {
+      "fade": {
+        "$type": "string",
+        "$description": "Preset name plus duration and easing. Keyframes are owned by the component that uses the preset.",
+        "$value": "uds-fade var(--uds-motion-duration-normal) var(--uds-motion-easing-standard)"
+      }
+    }
+  }
+}

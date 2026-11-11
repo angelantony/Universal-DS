@@ -1,0 +1,22 @@
+---
+description: L'interfaccia delle app è in italiano e in inglese, con l'italiano per primo
+alwaysApply: true
+---
+
+# Lingue dell'app
+
+L'interfaccia visibile (Storybook, portale, playground, theme builder) esiste in italiano e in inglese. L'italiano è la lingua predefinita e si scrive per primo.
+
+- Ogni stringa visibile sta in una mappa con `it` prima di `en`. In Storybook la mappa è `apps/storybook/stories/copy.ts`.
+- Il controllo Lingua parte da `it`. I titoli della sidebar sono in italiano.
+- Il nome accessibile mostrato in una storia segue la lingua selezionata.
+- I pannelli di Storybook che esistono solo in inglese restano spenti: checklist «Get started», notifica «What's new», filtro «Show new stories», pannello Controls, Actions e Interactions (`apps/storybook/.storybook/main.ts`).
+- La ricerca e i tooltip degli strumenti di Storybook restano in inglese: Storybook non ha una lingua italiana.
+- Non tradurre identificatori, token, package, commenti nel codice, né README e CONTRIBUTING.
+
+```ts
+const copy = {
+  it: { close: 'Chiudi' },
+  en: { close: 'Close' },
+} as const;
+```

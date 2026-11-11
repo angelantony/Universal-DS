@@ -1,0 +1,30 @@
+{
+  "name": "@uds/contract-check",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "@uds/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@uds/metadata": "workspace:*"
+  },
+  "devDependencies": {
+    "lit": "catalog:",
+    "vitest": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "type:tooling",
+      "framework:none"
+    ]
+  }
+}

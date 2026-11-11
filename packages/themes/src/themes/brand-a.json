@@ -1,0 +1,22 @@
+{
+  "color": {
+    "action": {
+      "primary": {
+        "background": { "$type": "color", "$value": "{color.teal.800}" },
+        "text": { "$type": "color", "$value": "{color.white}" }
+      }
+    },
+    "focus": {
+      "ring": { "$type": "color", "$value": "{color.teal.700}" }
+    }
+  },
+  "font": {
+    "family": {
+      "body": { "$type": "fontFamily", "$value": "{font.family.serif}" },
+      "heading": { "$type": "fontFamily", "$value": "{font.family.serif}" }
+    }
+  },
+  "radius": {
+    "control": { "$type": "dimension", "$value": "{radius.sm}" }
+  }
+}

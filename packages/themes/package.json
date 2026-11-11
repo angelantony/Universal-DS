@@ -2,17 +2,24 @@
   "name": "@uds/themes",
   "version": "0.0.0",
   "private": true,
-  "description": "Themes (light, dark, high contrast, brands) and runtime theme manager of Universal DS.",
+  "description": "Themes (light, dark, high contrast, brands) and the runtime theme manager.",
   "license": "UNLICENSED",
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "@uds/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./css": "./dist/themes.css",
+    "./light.css": "./dist/light.css",
+    "./dark.css": "./dist/dark.css",
+    "./high-contrast.css": "./dist/high-contrast.css",
+    "./brand-a.css": "./dist/brand-a.css"
   },
   "files": [
     "dist"
@@ -21,6 +28,26 @@
     "tags": [
       "type:foundation",
       "framework:none"
-    ]
+    ],
+    "targets": {
+      "build": {
+        "command": "node scripts/build.mjs && tsc --build tsconfig.lib.json",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "outputs": [
+          "{projectRoot}/dist",
+          "{projectRoot}/src/generated"
+        ],
+        "cache": true
+      }
+    }
+  },
+  "dependencies": {
+    "@uds/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "style-dictionary": "catalog:",
+    "vitest": "catalog:"
   }
 }

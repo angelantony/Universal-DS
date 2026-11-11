@@ -5,14 +5,18 @@
   "description": "Design tokens of Universal DS (DTCG sources, CSS custom properties, JSON).",
   "license": "UNLICENSED",
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "@uds/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./css": "./dist/tokens.css",
+    "./json": "./dist/tokens.resolved.json"
   },
   "files": [
     "dist"
@@ -21,6 +25,23 @@
     "tags": [
       "type:foundation",
       "framework:none"
-    ]
+    ],
+    "targets": {
+      "build": {
+        "command": "node scripts/build.mjs && tsc --build tsconfig.lib.json",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "outputs": [
+          "{projectRoot}/dist",
+          "{projectRoot}/src/generated"
+        ],
+        "cache": true
+      }
+    }
+  },
+  "devDependencies": {
+    "style-dictionary": "catalog:",
+    "vitest": "catalog:"
   }
 }

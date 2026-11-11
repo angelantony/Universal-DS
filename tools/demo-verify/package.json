@@ -1,0 +1,34 @@
+{
+  "name": "@uds/demo-verify",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Packs Universal DS and installs the framework demos from those tarballs.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "nx": {
+    "tags": [
+      "type:tooling",
+      "framework:none"
+    ],
+    "targets": {
+      "pack": {
+        "command": "node verify.mjs pack",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "@uds/tokens:build",
+          "@uds/themes:build",
+          "@uds/core:build",
+          "@uds/metadata:build",
+          "@uds/icons:build",
+          "@uds/components:build",
+          "@uds/react:build",
+          "@uds/angular:build",
+          "@uds/vue:build"
+        ],
+        "cache": false
+      }
+    }
+  }
+}

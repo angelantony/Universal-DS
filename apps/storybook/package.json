@@ -1,0 +1,40 @@
+{
+  "name": "@uds/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@uds/components": "workspace:*",
+    "@uds/core": "workspace:*",
+    "@uds/icons": "workspace:*",
+    "@uds/themes": "workspace:*",
+    "@uds/tokens": "workspace:*",
+    "lit": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/web-components-vite": "10.6.7",
+    "storybook": "10.6.7",
+    "vite": "8.3.8"
+  },
+  "nx": {
+    "tags": [
+      "type:app",
+      "framework:none"
+    ],
+    "targets": {
+      "build-storybook": {
+        "command": "storybook build -o dist",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "{projectRoot}/dist"
+        ],
+        "cache": true
+      }
+    }
+  }
+}

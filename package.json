@@ -17,9 +17,10 @@
     "e2e": "nx run-many -t e2e",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm format:check && nx run-many -t lint typecheck test build e2e",
+    "check": "pnpm format:check && pnpm lint:styles && nx run-many -t lint typecheck test build e2e && nx run @uds/storybook:build-storybook",
     "changeset": "changeset",
-    "graph": "nx graph"
+    "graph": "nx graph",
+    "lint:styles": "node tools/lint/lint-styles.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "catalog:",
@@ -42,10 +43,14 @@
     "nx": "24.0.6",
     "playwright": "catalog:",
     "prettier": "3.9.10",
+    "style-dictionary": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "8.72.2",
     "vite": "8.3.8",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "zod": "catalog:",
+    "postcss-lit": "catalog:",
+    "stylelint": "catalog:"
   }
 }

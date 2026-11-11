@@ -5,9 +5,27 @@
   "format": "prettier",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "ignore": ["@uds/testing"],
+  "ignore": [
+    "@uds/testing",
+    "@uds/generators",
+    "@uds/demo-verify",
+    "@uds/demo-vanilla",
+    "@uds/demo-react",
+    "@uds/demo-angular",
+    "@uds/demo-vue"
+  ],
   "fixed": [
-    ["@uds/tokens", "@uds/themes", "@uds/core", "@uds/icons", "@uds/metadata", "@uds/components"]
+    [
+      "@uds/tokens",
+      "@uds/themes",
+      "@uds/core",
+      "@uds/icons",
+      "@uds/metadata",
+      "@uds/components",
+      "@uds/react",
+      "@uds/angular",
+      "@uds/vue"
+    ]
   ],
   "linked": [],
   "updateInternalDependencies": "patch",

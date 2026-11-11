@@ -1,0 +1,50 @@
+{
+  "color": {
+    "background": {
+      "canvas": { "$type": "color", "$value": "{color.black}" },
+      "surface": { "$type": "color", "$value": "{color.black}" }
+    },
+    "text": {
+      "default": { "$type": "color", "$value": "{color.white}" },
+      "muted": { "$type": "color", "$value": "{color.white}" },
+      "inverse": { "$type": "color", "$value": "{color.black}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.white}" },
+      "strong": { "$type": "color", "$value": "{color.white}" }
+    },
+    "focus": {
+      "ring": { "$type": "color", "$value": "{color.yellow.hc}" }
+    },
+    "action": {
+      "primary": {
+        "background": { "$type": "color", "$value": "{color.white}" },
+        "text": { "$type": "color", "$value": "{color.black}" }
+      },
+      "secondary": {
+        "background": { "$type": "color", "$value": "{color.black}" },
+        "text": { "$type": "color", "$value": "{color.white}" },
+        "border": { "$type": "color", "$value": "{color.white}" }
+      }
+    },
+    "success": {
+      "background": { "$type": "color", "$value": "{color.green.hc}" },
+      "text": { "$type": "color", "$value": "{color.black}" },
+      "onCanvas": { "$type": "color", "$value": "{color.green.hc}" }
+    },
+    "warning": {
+      "background": { "$type": "color", "$value": "{color.yellow.hc}" },
+      "text": { "$type": "color", "$value": "{color.black}" },
+      "onCanvas": { "$type": "color", "$value": "{color.yellow.hc}" }
+    },
+    "danger": {
+      "background": { "$type": "color", "$value": "{color.red.hc}" },
+      "text": { "$type": "color", "$value": "{color.black}" },
+      "onCanvas": { "$type": "color", "$value": "{color.red.hc}" }
+    },
+    "info": {
+      "background": { "$type": "color", "$value": "{color.cyan.hc}" },
+      "text": { "$type": "color", "$value": "{color.black}" }
+    }
+  }
+}

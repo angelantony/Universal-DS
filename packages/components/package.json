@@ -5,14 +5,31 @@
   "description": "Lit Web Components of Universal DS and their public contract metadata.",
   "license": "UNLICENSED",
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": [
+    "./dist/button/define.js"
+  ],
   "exports": {
     ".": {
       "@uds/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./button": {
+      "@uds/source": "./src/button/define.ts",
+      "types": "./dist/button/define.d.ts",
+      "default": "./dist/button/define.js"
+    },
+    "./button/class": {
+      "@uds/source": "./src/button/index.ts",
+      "types": "./dist/button/index.d.ts",
+      "default": "./dist/button/index.js"
+    },
+    "./metadata": {
+      "@uds/source": "./src/metadata.ts",
+      "types": "./dist/metadata.d.ts",
+      "default": "./dist/metadata.js"
+    }
   },
   "files": [
     "dist"
@@ -22,5 +39,24 @@
       "type:runtime",
       "framework:none"
     ]
+  },
+  "dependencies": {
+    "@uds/core": "workspace:*",
+    "@uds/icons": "workspace:*",
+    "@uds/metadata": "workspace:*",
+    "lit": "catalog:"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "catalog:",
+    "@playwright/test": "catalog:",
+    "@uds/contract-check": "workspace:*",
+    "@uds/themes": "workspace:*",
+    "@uds/tokens": "workspace:*",
+    "@vitest/browser-playwright": "catalog:",
+    "axe-core": "catalog:",
+    "esbuild": "catalog:",
+    "playwright": "catalog:",
+    "vite": "8.3.8",
+    "vitest": "catalog:"
   }
 }

@@ -1,0 +1,29 @@
+{
+  "layout": {
+    "breakpoint": {
+      "sm": { "$type": "dimension", "$value": "30rem", "$description": "480px" },
+      "md": { "$type": "dimension", "$value": "48rem", "$description": "768px" },
+      "lg": { "$type": "dimension", "$value": "64rem", "$description": "1024px" },
+      "xl": { "$type": "dimension", "$value": "90rem", "$description": "1440px" },
+      "2xl": { "$type": "dimension", "$value": "120rem", "$description": "1920px" }
+    },
+    "container": {
+      "sm": { "$type": "dimension", "$value": "40rem" },
+      "md": { "$type": "dimension", "$value": "48rem" },
+      "lg": { "$type": "dimension", "$value": "64rem" },
+      "xl": { "$type": "dimension", "$value": "80rem" }
+    },
+    "z": {
+      "base": { "$type": "number", "$value": 0 },
+      "dropdown": { "$type": "number", "$value": 10 },
+      "sticky": { "$type": "number", "$value": 20 },
+      "overlay": { "$type": "number", "$value": 30 },
+      "modal": { "$type": "number", "$value": 40 },
+      "toast": { "$type": "number", "$value": 50 }
+    },
+    "grid": {
+      "columns": { "$type": "number", "$value": 12 },
+      "gutter": { "$type": "dimension", "$value": "{space.4}" }
+    }
+  }
+}

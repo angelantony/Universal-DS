@@ -1,6 +1,6 @@
 # Component Metadata Registry — Specifica
 
-> Stato: proposta (M0). Implementazione dello schema in M2, prima definizione reale in M3 (Button).
+> Stato: schema implementato in M2 (2026-11-11). Il contract check confronta decoratori e JSDoc; CEM non è il gate (R-05). Prima definizione reale di un componente in M3 (Button).
 > Gli esempi di codice in questo documento sono illustrativi del contratto, non implementazione.
 
 ## 1. Obiettivi

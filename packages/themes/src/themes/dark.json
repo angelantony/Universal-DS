@@ -1,0 +1,50 @@
+{
+  "color": {
+    "background": {
+      "canvas": { "$type": "color", "$value": "{color.neutral.950}" },
+      "surface": { "$type": "color", "$value": "{color.neutral.900}" }
+    },
+    "text": {
+      "default": { "$type": "color", "$value": "{color.neutral.50}" },
+      "muted": { "$type": "color", "$value": "{color.neutral.300}" },
+      "inverse": { "$type": "color", "$value": "{color.neutral.950}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.neutral.700}" },
+      "strong": { "$type": "color", "$value": "{color.neutral.300}" }
+    },
+    "focus": {
+      "ring": { "$type": "color", "$value": "{color.blue.300}" }
+    },
+    "action": {
+      "primary": {
+        "background": { "$type": "color", "$value": "{color.blue.700}" },
+        "text": { "$type": "color", "$value": "{color.white}" }
+      },
+      "secondary": {
+        "background": { "$type": "color", "$value": "{color.neutral.900}" },
+        "text": { "$type": "color", "$value": "{color.neutral.50}" },
+        "border": { "$type": "color", "$value": "{color.neutral.300}" }
+      }
+    },
+    "success": {
+      "background": { "$type": "color", "$value": "{color.green.800}" },
+      "text": { "$type": "color", "$value": "{color.white}" },
+      "onCanvas": { "$type": "color", "$value": "{color.green.300}" }
+    },
+    "warning": {
+      "background": { "$type": "color", "$value": "{color.amber.900}" },
+      "text": { "$type": "color", "$value": "{color.white}" },
+      "onCanvas": { "$type": "color", "$value": "{color.amber.300}" }
+    },
+    "danger": {
+      "background": { "$type": "color", "$value": "{color.red.800}" },
+      "text": { "$type": "color", "$value": "{color.white}" },
+      "onCanvas": { "$type": "color", "$value": "{color.red.300}" }
+    },
+    "info": {
+      "background": { "$type": "color", "$value": "{color.cyan.800}" },
+      "text": { "$type": "color", "$value": "{color.white}" }
+    }
+  }
+}

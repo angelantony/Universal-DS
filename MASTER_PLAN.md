@@ -8,19 +8,19 @@
 
 ## 1. Stato attuale
 
-| Milestone                        | Stato                                                  | Report                                                         |
-| -------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------- |
-| M0 — Discovery e Architecture    | **Completata e approvata (2026-11-11)**                | [`docs/milestones/M0-report.md`](docs/milestones/M0-report.md) |
-| M1 — Foundation                  | **Completata**: 10/10 criteri; CI verde sul primo push | [`docs/milestones/M1-report.md`](docs/milestones/M1-report.md) |
-| M2 — Core Design System          | Non iniziata                                           | —                                                              |
-| M3 — Button                      | Non iniziata                                           | —                                                              |
-| M4 — Cross-framework             | Non iniziata                                           | —                                                              |
-| M5 — Portal Foundation           | Non iniziata                                           | —                                                              |
-| M6 — Playground e Configurator   | Non iniziata                                           | —                                                              |
-| M7 — Theme Builder               | Non iniziata                                           | —                                                              |
-| M8 — Visual Component Builder    | Non iniziata                                           | —                                                              |
-| M9 — CLI e Distribuzione         | Non iniziata                                           | —                                                              |
-| M10 — PWA e Production Readiness | Non iniziata                                           | —                                                              |
+| Milestone                        | Stato                                                      | Report                                                         |
+| -------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------- |
+| M0 — Discovery e Architecture    | **Completata e approvata (2026-11-11)**                    | [`docs/milestones/M0-report.md`](docs/milestones/M0-report.md) |
+| M1 — Foundation                  | **Completata**: 10/10 criteri; CI verde sul primo push     | [`docs/milestones/M1-report.md`](docs/milestones/M1-report.md) |
+| M2 — Core Design System          | **Completata in locale (2026-11-11); CI al prossimo push** | [`docs/milestones/M2-report.md`](docs/milestones/M2-report.md) |
+| M3 — Button                      | **Implementata in locale (2026-11-11), stato beta**        | [`docs/milestones/M3-report.md`](docs/milestones/M3-report.md) |
+| M4 — Cross-framework             | **Implementata in locale (2026-11-11)**                    | [`docs/milestones/M4-report.md`](docs/milestones/M4-report.md) |
+| M5 — Portal Foundation           | Non iniziata                                               | —                                                              |
+| M6 — Playground e Configurator   | Non iniziata                                               | —                                                              |
+| M7 — Theme Builder               | Non iniziata                                               | —                                                              |
+| M8 — Visual Component Builder    | Non iniziata                                               | —                                                              |
+| M9 — CLI e Distribuzione         | Non iniziata                                               | —                                                              |
+| M10 — PWA e Production Readiness | Non iniziata                                               | —                                                              |
 
 ---
 
@@ -90,25 +90,41 @@ Criteri di accettazione:
 
 Nessun componente UI in questa milestone.
 
-### M2 — Core Design System
+### M2 — Core Design System ✅ (locale, 2026-11-11)
 
-1. `@uds/tokens`: sorgenti DTCG (tutte le categorie di §7.1), build Style Dictionary verso CSS/JSON/TS; test di snapshot dell'output; validazione DTCG.
-2. `@uds/themes`: light, dark, high-contrast, un brand di esempio; `ThemeManager` con test di cambio a runtime e persistenza opzionale.
-3. Test di contrasto automatici su tutte le coppie testo/sfondo semantiche di ogni tema (≥ 4.5:1 testo, ≥ 3:1 componenti non testuali e focus).
-4. `@uds/core`: `UdsElement`, `defineElement` idempotente, controller form association, stili base (focus ring, reduced motion, forced colors), test "import-safe in Node".
-5. `@uds/icons`: registry, `<uds-icon>`, sanitizzazione con test di payload malevoli.
-6. `@uds/metadata`: schema Zod, JSON Schema esportato, validatore, registry, contract check con CEM su un componente fixture di test (non UI).
-7. Regole lint contro valori grafici hard-coded, con test.
-8. Storybook interno avviabile.
-9. Standard del componente documentato in `docs/standards/component-standard.md`.
+- [x] 1. `@uds/tokens`: sorgenti DTCG (tutte le categorie di §7.1), build Style Dictionary verso CSS/JSON/TS; test di snapshot dell'output; validazione DTCG.
+- [x] 2. `@uds/themes`: light, dark, high-contrast, un brand di esempio; `ThemeManager` con test di cambio a runtime e persistenza opzionale.
+- [x] 3. Test di contrasto automatici su tutte le coppie testo/sfondo semantiche di ogni tema (≥ 4.5:1 testo, ≥ 3:1 componenti non testuali e focus).
+- [x] 4. `@uds/core`: `UdsElement`, `defineElement` idempotente, controller form association, stili base (focus ring, reduced motion, forced colors), test "import-safe in Node".
+- [x] 5. `@uds/icons`: registry, `<uds-icon>`, sanitizzazione con test di payload malevoli.
+- [x] 6. `@uds/metadata`: schema Zod, JSON Schema esportato, validatore, registry, contract check su un fixture di test (non UI). CEM non adottato: l'analyzer pubblica TypeScript 5.4 (R-05); il controllo confronta decoratori Lit e tag JSDoc.
+- [x] 7. Regole lint contro valori grafici hard-coded, con test.
+- [x] 8. Storybook interno avviato e verificato nel browser (storie dell'icona).
+- [x] 9. Standard del componente documentato in `docs/standards/component-standard.md`.
 
-### M3 — Button
+La CI di M2 non include ancora questo codice: i file non sono in un commit.
 
-Definition of Done di §29 della specifica, applicata a `uds-button`; inoltre: metadata validi e coerenti col CEM, checklist a11y manuale (NVDA + VoiceOver + sola tastiera) compilata, regressione visiva su tutte le varianti × dimensioni × stati × temi, test alle 6 viewport, budget di bundle misurato.
+### M3 — Button (beta, 2026-11-11)
 
-### M4 — Cross-framework
+- [x] `uds-button` con `variant` + `tone`, custom property, form association, icone, loading e target minimo 24px.
+- [x] Metadata allineati al sorgente (contract check su decoratori e JSDoc; CEM non adottato, R-05).
+- [x] axe, tastiera, 6 viewport, zoom 200% e 400%.
+- [x] Baseline visive Chromium nell'immagine Docker Playwright: 6 viewport × 3 temi. Firefox e WebKit visivi aperti. Il test non gira nella suite ordinaria.
+- [x] Bundle del modulo Button: 3570 byte gzip, sotto 8 kB, escluse le dipendenze.
+- [ ] Checklist manuale NVDA, VoiceOver e Safari reale. Il file c'è; le righe manuali non sono eseguite. Per questo lo stato è `beta`.
+- [ ] `publint`, `attw`, `madge`.
 
-Demo vanilla, React, Angular, Vue che installano i package **da tarball** (non dal workspace); test e2e Playwright per proprietà, eventi, slot, form submit/reset, tipizzazioni (type check delle demo con errori attesi su valori non ammessi).
+Dettaglio in [`docs/milestones/M3-report.md`](docs/milestones/M3-report.md).
+
+### M4 — Cross-framework (2026-11-11)
+
+- [x] `@uds/react`, `@uds/angular`, `@uds/vue` generati da `tools/generators` a partire da `componentCatalog`. Il test del generatore fallisce se i file committati divergono.
+- [x] Demo vanilla, React 19, Angular 22 e Vue 3 installate da tarball (`pnpm pack`, dipendenze `@uds/*` riscritte in `file:`).
+- [x] Playwright: proprietà, click, slot, submit e reset su Chromium, per ogni demo.
+- [x] `tsc` / `vue-tsc` / `ngc` accettano le demo e rifiutano `variant="nope"`.
+- [ ] `ControlValueAccessor` e `v-model` sono generati solo per i componenti di form. Il Button non lo è; il ramo è coperto da un fixture del generatore, non da una demo.
+
+Dettaglio in [`docs/milestones/M4-report.md`](docs/milestones/M4-report.md). M5 non è iniziata.
 
 ### M5 — Portal Foundation
 
@@ -146,11 +162,11 @@ Ogni report in `docs/milestones/Mx-report.md` contiene: obiettivi, funzionalità
 
 | ID   | Rischio                                                                                                                  | Prob.      | Impatto      | Mitigazione                                                                                                               |
 | ---- | ------------------------------------------------------------------------------------------------------------------------ | ---------- | ------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| R-01 | Deriva tra metadata e implementazione                                                                                    | Media      | Alto         | Enum importati dai metadata + contract check CEM bloccante (ADR-0004)                                                     |
+| R-01 | Deriva tra metadata e implementazione                                                                                    | Media      | Alto         | Enum importati dai metadata + contract check su decoratori e JSDoc (ADR-0004, R-05)                                       |
 | R-02 | Angular e typescript-eslint non supportano TypeScript 7                                                                  | Certa oggi | Alto         | Pin su 6.0.x; rivalutazione a ogni minor di Angular (ADR-0002)                                                            |
 | R-03 | Form association e ARIA attraverso lo Shadow DOM (riferimenti `aria-describedby`/`labelledby` cross-root non supportati) | Alta       | Alto         | `ElementInternals`; nome accessibile propagato all'elemento nativo interno; limiti documentati per componente             |
 | R-04 | Regressione visiva instabile tra sistemi operativi                                                                       | Alta       | Medio        | Baseline generate solo nell'immagine Docker Playwright                                                                    |
-| R-05 | Custom Elements Manifest analyzer (TS 5.4 interno) e decoratori standard con `accessor`                                  | Media      | Medio        | Spike in M2; fallback: plugin CEM custom o JSDoc espliciti                                                                |
+| R-05 | Custom Elements Manifest analyzer (TS 5.4 interno) e decoratori standard con `accessor`                                  | Media      | Medio        | Mitigato in M2: contract check su decoratori e JSDoc. CEM da rivalutare se l'analyzer supporta TypeScript 6               |
 | R-06 | WebKit di Playwright ≠ Safari reale; Edge ≈ Chromium                                                                     | Certa      | Medio        | Matrice documentata; Safari reale verificato manualmente o via servizio cloud (da autorizzare)                            |
 | R-07 | Personalizzazione libera dei colori del Button che viola il contrasto                                                    | Alta       | Alto         | ADR-0011: `variant="custom"` documentato come responsabilità del consumatore + validazione di contrasto nel Theme Builder |
 | R-08 | Due versioni della libreria nella stessa pagina (conflitto `customElements.define`)                                      | Media      | Alto         | `defineElement` idempotente + warning; valutare Scoped Custom Element Registries in M10                                   |

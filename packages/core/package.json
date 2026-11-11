@@ -22,5 +22,13 @@
       "type:runtime",
       "framework:none"
     ]
+  },
+  "dependencies": {
+    "lit": "catalog:"
+  },
+  "devDependencies": {
+    "@vitest/browser-playwright": "catalog:",
+    "playwright": "catalog:",
+    "vitest": "catalog:"
   }
 }

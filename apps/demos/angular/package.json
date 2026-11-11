@@ -1,0 +1,52 @@
+{
+  "name": "@uds/demo-angular",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Angular 22 demo that installs Universal DS from tarballs.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@angular/core": "catalog:",
+    "@angular/platform-browser": "catalog:",
+    "@uds/angular": "workspace:*",
+    "@uds/themes": "workspace:*",
+    "@uds/tokens": "workspace:*",
+    "rxjs": "catalog:"
+  },
+  "devDependencies": {
+    "@angular/build": "catalog:",
+    "@angular/cli": "catalog:",
+    "@angular/compiler": "catalog:",
+    "@angular/compiler-cli": "catalog:",
+    "@playwright/test": "catalog:",
+    "typescript": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "type:app",
+      "framework:angular"
+    ],
+    "targets": {
+      "typecheck": {
+        "command": "node ../../../tools/demo-verify/verify.mjs typecheck",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "@uds/demo-verify:pack"
+        ],
+        "cache": false
+      },
+      "e2e": {
+        "command": "node ../../../tools/demo-verify/verify.mjs e2e",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "typecheck"
+        ],
+        "cache": false
+      }
+    }
+  }
+}

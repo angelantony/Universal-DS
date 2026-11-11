@@ -1,0 +1,49 @@
+{
+  "name": "@uds/demo-vue",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Vue 3 demo that installs Universal DS from tarballs.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@uds/themes": "workspace:*",
+    "@uds/tokens": "workspace:*",
+    "@uds/vue": "workspace:*",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:",
+    "vite": "8.3.8",
+    "vue-tsc": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "type:app",
+      "framework:vue"
+    ],
+    "targets": {
+      "typecheck": {
+        "command": "node ../../../tools/demo-verify/verify.mjs typecheck",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "@uds/demo-verify:pack"
+        ],
+        "cache": false
+      },
+      "e2e": {
+        "command": "node ../../../tools/demo-verify/verify.mjs e2e",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "typecheck"
+        ],
+        "cache": false
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@uds/react",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generated React 19 bindings for Universal DS custom elements.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": true,
+  "exports": {
+    ".": {
+      "@uds/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "nx": {
+    "tags": [
+      "type:adapter",
+      "framework:react"
+    ]
+  },
+  "dependencies": {
+    "@lit/react": "catalog:",
+    "@uds/components": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "react": "catalog:"
+  }
+}

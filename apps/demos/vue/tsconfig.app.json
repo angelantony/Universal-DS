@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "e2e/**/*.ts",
+    "playwright.demo.ts",
+    "vite.demo.config.ts"
+  ],
+  "exclude": ["typecheck"],
+  "references": [
+    {
+      "path": "../../../packages/vue/tsconfig.lib.json"
+    },
+    {
+      "path": "../../../packages/tokens/tsconfig.lib.json"
+    },
+    {
+      "path": "../../../packages/themes/tsconfig.lib.json"
+    }
+  ]
+}

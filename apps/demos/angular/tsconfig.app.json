@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": []
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
+  "include": ["src/**/*.ts", "e2e/**/*.ts", "playwright.demo.ts"],
+  "exclude": ["typecheck"],
+  "references": [
+    {
+      "path": "../../../packages/tokens/tsconfig.lib.json"
+    },
+    {
+      "path": "../../../packages/themes/tsconfig.lib.json"
+    },
+    {
+      "path": "../../../packages/angular"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@uds/generators",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generates React, Angular and Vue adapters from Universal DS component metadata.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": {
+      "@uds/source": "./src/render.ts",
+      "types": "./dist/render.d.ts",
+      "default": "./dist/render.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist"],
+  "nx": {
+    "tags": ["type:generator", "framework:none"],
+    "targets": {
+      "generate": {
+        "command": "node dist/cli.js",
+        "options": { "cwd": "{projectRoot}" },
+        "dependsOn": ["build"],
+        "cache": false
+      }
+    }
+  },
+  "dependencies": {
+    "@uds/components": "workspace:*",
+    "@uds/metadata": "workspace:*",
+    "prettier": "3.9.10"
+  },
+  "devDependencies": {
+    "vitest": "catalog:"
+  }
+}

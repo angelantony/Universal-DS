@@ -1,0 +1,44 @@
+{
+  "radius": {
+    "none": { "$type": "dimension", "$value": "0rem" },
+    "sm": { "$type": "dimension", "$value": "0.25rem" },
+    "md": { "$type": "dimension", "$value": "0.5rem" },
+    "lg": { "$type": "dimension", "$value": "0.75rem" },
+    "full": { "$type": "dimension", "$value": "9999px" }
+  },
+  "border": {
+    "width": {
+      "none": { "$type": "dimension", "$value": "0px" },
+      "thin": { "$type": "dimension", "$value": "1px" },
+      "thick": { "$type": "dimension", "$value": "2px" }
+    }
+  },
+  "shadow": {
+    "none": { "$type": "string", "$value": "none" },
+    "sm": {
+      "$type": "shadow",
+      "$value": {
+        "color": "#0f172a1a",
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0px"
+      }
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": {
+        "color": "#0f172a26",
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "24px",
+        "spread": "0px"
+      }
+    }
+  },
+  "elevation": {
+    "flat": { "$type": "number", "$value": 0 },
+    "raised": { "$type": "number", "$value": 1 },
+    "overlay": { "$type": "number", "$value": 2 }
+  }
+}
