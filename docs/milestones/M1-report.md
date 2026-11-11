@@ -1,7 +1,7 @@
 # Report — Milestone 1: Foundation
 
 - Data: 2026-11-11
-- Stato: **verificata localmente; 1 criterio su 10 (CI sul primo push) in attesa del repository remoto**
+- Stato: **completata; 10 criteri su 10. CI verde sul primo push** (run [`42989094121`](https://github.com/angelantony/Universal-DS/actions/runs/42989094121))
 
 ## Obiettivi
 
@@ -17,7 +17,7 @@ Creare un monorepo funzionante e verificato: pnpm, Nx, TypeScript strict, lint, 
 - `@uds/testing`: viewport standard della strategia di test + test di fumo reali (vedi sotto).
 - Changesets 3 con gruppo `fixed` per i package runtime e `@uds/testing` escluso.
 - Workflow GitHub Actions `ci.yml`.
-- Repository Git inizializzato (branch `main`).
+- Repository Git inizializzato (branch `main`), primo commit e primo push su `git@github.com:angelantony/Universal-DS.git` (repository privato).
 
 ## File creati
 
@@ -74,10 +74,9 @@ Totale: 14/14 test Vitest, 9/9 test Playwright superati. Nessun test disabilitat
 
 ## Problemi aperti
 
-1. **CI non verificata**: nessun repository remoto. Il workflow è scritto e ogni suo comando è stato eseguito localmente, ma il criterio "CI verde sul primo push" resta aperto.
-2. **Nessun commit**: Git non ha un'identità configurata (`user.name`/`user.email`), quindi i file non sono stati committati. Da fare al momento del collegamento al remote.
-3. **`pnpm` non nel PATH di sistema**: serve `corepack enable` (in questa sessione ho usato una directory temporanea, senza modificare l'installazione di Node).
-4. **Vulnerabilità moderata** `minimatch` (GHSA-g3hv-75wg-m249), transitiva di Nx, solo in sviluppo. La correzione richiede `minimatch@11`, non supportato da Nx 24. Nessun input non attendibile passa da glob. Da ricontrollare a ogni aggiornamento di Nx.
+1. **Warning di deprecazione in CI (non bloccanti)**: `actions/checkout@v4` e `actions/setup-node@v4` girano su Node.js 24 invece che su Node.js 20 (deprecazione di Node 20 sui runner GitHub). Il runner `ubuntu-latest` migrerà a Ubuntu 26 dal 19 ottobre 2026. Da aggiornare alle action più recenti in M10, insieme al pin per SHA.
+2. **`pnpm` non nel PATH di sistema risolto**: `corepack enable` standard fallisce con `EACCES` su `/usr/local/bin` (directory di root, senza `sudo`). `pnpm` 12.19.0 è installato con `corepack enable --install-directory ~/.local/bin`, e `~/.bash_profile` aggiunge `~/.local/bin` al PATH. Node non è stato modificato. La CLI `gh` è installata come binario ufficiale in `~/.local/bin`, perché Homebrew richiede `sudo`.
+3. **Vulnerabilità moderata** `minimatch` (GHSA-g3hv-75wg-m249), transitiva di Nx, solo in sviluppo. La correzione richiede `minimatch@11`, non supportato da Nx 24. Nessun input non attendibile passa da glob. Da ricontrollare a ogni aggiornamento di Nx.
 
 ## Debito tecnico
 
@@ -86,18 +85,18 @@ Totale: 14/14 test Vitest, 9/9 test Playwright superati. Nessun test disabilitat
 
 ## Criteri di accettazione
 
-| #   | Criterio                                                    | Esito                                    |
-| --- | ----------------------------------------------------------- | ---------------------------------------- |
-| 1   | `pnpm install` con lockfile pulito                          | ✅ localmente (in CI: aperto, vedi #7)   |
-| 2   | Nx configurato, progetti con i tag previsti                 | ✅                                       |
-| 3   | `enforce-module-boundaries` con test negativo dimostrato    | ✅ (con correzione di una lacuna)        |
-| 4   | TypeScript 6.0 strict, typecheck verde                      | ✅                                       |
-| 5   | ESLint 10 + Prettier verdi                                  | ✅                                       |
-| 6   | Vitest (Node + browser) e Playwright con test di fumo verdi | ✅                                       |
-| 7   | CI iniziale verde sul primo push                            | ⏳ **non verificabile**: manca il remote |
-| 8   | Changesets inizializzato, nessuna pubblicazione             | ✅                                       |
-| 9   | README, CONTRIBUTING, setup                                 | ✅                                       |
-| 10  | Report M1                                                   | ✅                                       |
+| #   | Criterio                                                    | Esito                                   |
+| --- | ----------------------------------------------------------- | --------------------------------------- |
+| 1   | `pnpm install` con lockfile pulito                          | ✅ localmente e in CI (run 42989094121) |
+| 2   | Nx configurato, progetti con i tag previsti                 | ✅                                      |
+| 3   | `enforce-module-boundaries` con test negativo dimostrato    | ✅ (con correzione di una lacuna)       |
+| 4   | TypeScript 6.0 strict, typecheck verde                      | ✅                                      |
+| 5   | ESLint 10 + Prettier verdi                                  | ✅                                      |
+| 6   | Vitest (Node + browser) e Playwright con test di fumo verdi | ✅                                      |
+| 7   | CI iniziale verde sul primo push                            | ✅ run 42989094121 (2026-11-11)         |
+| 8   | Changesets inizializzato, nessuna pubblicazione             | ✅                                      |
+| 9   | README, CONTRIBUTING, setup                                 | ✅                                      |
+| 10  | Report M1                                                   | ✅                                      |
 
 ## Prossima milestone
 

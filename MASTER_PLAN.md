@@ -8,19 +8,19 @@
 
 ## 1. Stato attuale
 
-| Milestone                        | Stato                                                                           | Report                                                         |
-| -------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| M0 — Discovery e Architecture    | **Completata e approvata (2026-11-11)**                                         | [`docs/milestones/M0-report.md`](docs/milestones/M0-report.md) |
-| M1 — Foundation                  | **Verificata localmente**: 9/10 criteri; CI sul primo push in attesa del remote | [`docs/milestones/M1-report.md`](docs/milestones/M1-report.md) |
-| M2 — Core Design System          | Non iniziata                                                                    | —                                                              |
-| M3 — Button                      | Non iniziata                                                                    | —                                                              |
-| M4 — Cross-framework             | Non iniziata                                                                    | —                                                              |
-| M5 — Portal Foundation           | Non iniziata                                                                    | —                                                              |
-| M6 — Playground e Configurator   | Non iniziata                                                                    | —                                                              |
-| M7 — Theme Builder               | Non iniziata                                                                    | —                                                              |
-| M8 — Visual Component Builder    | Non iniziata                                                                    | —                                                              |
-| M9 — CLI e Distribuzione         | Non iniziata                                                                    | —                                                              |
-| M10 — PWA e Production Readiness | Non iniziata                                                                    | —                                                              |
+| Milestone                        | Stato                                                  | Report                                                         |
+| -------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------- |
+| M0 — Discovery e Architecture    | **Completata e approvata (2026-11-11)**                | [`docs/milestones/M0-report.md`](docs/milestones/M0-report.md) |
+| M1 — Foundation                  | **Completata**: 10/10 criteri; CI verde sul primo push | [`docs/milestones/M1-report.md`](docs/milestones/M1-report.md) |
+| M2 — Core Design System          | Non iniziata                                           | —                                                              |
+| M3 — Button                      | Non iniziata                                           | —                                                              |
+| M4 — Cross-framework             | Non iniziata                                           | —                                                              |
+| M5 — Portal Foundation           | Non iniziata                                           | —                                                              |
+| M6 — Playground e Configurator   | Non iniziata                                           | —                                                              |
+| M7 — Theme Builder               | Non iniziata                                           | —                                                              |
+| M8 — Visual Component Builder    | Non iniziata                                           | —                                                              |
+| M9 — CLI e Distribuzione         | Non iniziata                                           | —                                                              |
+| M10 — PWA e Production Readiness | Non iniziata                                           | —                                                              |
 
 ---
 
@@ -28,12 +28,12 @@
 
 Stato al 2026-11-11 (fine M1):
 
-| Strumento       | Stato                        | Azione richiesta                                                                        |
-| --------------- | ---------------------------- | --------------------------------------------------------------------------------------- |
-| Node.js         | 24.15.0 ✅                   | Nessuna                                                                                 |
-| pnpm            | 12.19.0 via corepack ⚠️      | Eseguire `corepack enable` per avere `pnpm` nel PATH (vedi `docs/development/setup.md`) |
-| git             | 2.54.0 ✅, repository creato | Configurare `user.name` / `user.email` ed effettuare il primo commit                    |
-| Remote Git / CI | ❌ assente                   | Creare il repository GitHub e fare il primo push: chiude il criterio 7 di M1            |
+| Strumento       | Stato                         | Azione richiesta                                                                           |
+| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------ |
+| Node.js         | 24.15.0 ✅                    | Nessuna                                                                                    |
+| pnpm            | 12.19.0 ✅ (`~/.local/bin`)   | Nessuna: installazione utente via corepack, senza sudo; `~/.bash_profile` aggiorna il PATH |
+| git             | 2.54.0 ✅, primo commit       | Nessuna                                                                                    |
+| Remote Git / CI | ✅ `angelantony/Universal-DS` | Nessuna: CI verde sul primo push (run `42989094121`)                                       |
 
 ---
 
@@ -83,7 +83,7 @@ Criteri di accettazione:
 - [x] 4. TypeScript 6.0 strict con config base condivise; `typecheck` verde.
 - [x] 5. ESLint 10 (flat config) + Prettier; `lint` e `format:check` verdi.
 - [x] 6. Vitest (Node + browser mode) e Playwright con test di fumo verdi.
-- [ ] 7. CI iniziale verde sul primo push — **in attesa del repository remoto**.
+- [x] 7. CI iniziale verde sul primo push (run [`42989094121`](https://github.com/angelantony/Universal-DS/actions/runs/42989094121), 2026-11-11).
 - [x] 8. Changesets inizializzato con la configurazione di ADR-0009 (nessuna pubblicazione).
 - [x] 9. `README.md`, `CONTRIBUTING.md`, `docs/development/setup.md`.
 - [x] 10. Report M1.
